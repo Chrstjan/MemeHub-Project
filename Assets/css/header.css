@@ -37,3 +37,23 @@
 .top-nav-list li {
   list-style-type: none;
 }
+
+.main-header .sub-top-nav {
+  background: #1c1c1c;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sub-top-nav .sub-top-nav-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0;
+  padding-left: 0.4rem;
+}
+
+.sub-top-nav-list li {
+  list-style-type: none;
+}
