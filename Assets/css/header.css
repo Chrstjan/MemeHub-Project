@@ -1,0 +1,39 @@
+.main-header .top-nav {
+  background: #1c1c1c;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.left-side {
+  padding-left: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-nav .left-side #hamburger {
+  display: block;
+}
+
+#hamburger .bar {
+  display: block;
+  margin: 3px 0;
+  background: #fff;
+  width: 15px;
+  height: 4px;
+}
+
+.top-nav .top-nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.top-nav-list li {
+  list-style-type: none;
+}
