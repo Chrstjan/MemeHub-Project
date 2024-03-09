@@ -92,26 +92,26 @@ function buildPost(userPost) {
 
   userPost.forEach((post) => {
     let postElement = `
-      <article>
-        <header>
+      <article class="post-container">
+        <header class="post-header">
         <h4>${post.title}</h4>
-        <span>User: ${post.userId}</<p>
+        <span class="posted-by">User: ${post.userId}</<p>
         </header>
-        <div>
+        <div class="post-content-container">
           <p>${post.body}</p>
-          <footer>
+          <footer class="post-tags">
             ${post.tags.map((tag) => `<p>${tag}</p>`).join("")}
           </footer>
         </div>
-        <footer>
-          <span>
-            <button>Updoot</button>
+        <footer class="post-footer">
+          <span class="post-reactions-container">
+            <button id="upDoot">&#8593;</button>
             <p>${post.reactions}</p>
-            <button>Downdoot</button>
+            <button id="downDoot">&#8595;</button>
           </span>
-          <button>Comments</button>
+          <button class="comments-btn">Comments</button>
 
-          <button>Report</button>
+          <button class="report-btn">Report</button>
         </footer>
       </article>`;
 
