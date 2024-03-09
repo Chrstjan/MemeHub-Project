@@ -1,4 +1,6 @@
 //#region GLOBAL
+const viewContainer = document.getElementById("viewContainer");
+
 let allPostsArray = [];
 let allCommentsArray = [];
 let allUsersArray = [];
@@ -63,10 +65,12 @@ function getCommentsData() {
 //#endregion Model Code
 
 //#region Controller Code
-function recivedPostsData(userPost) {
-  allPostsArray = userPost;
+function recivedPostsData(userPosts) {
+  // console.log(userPost);
+  allPostsArray = userPosts.posts;
 
   console.log(allPostsArray);
+  buildPost(allPostsArray);
 }
 
 function recivedCommentsData(userComments) {
@@ -83,5 +87,39 @@ function recivedUsersData(users) {
 //#endregion Controller Code
 
 //#region View Code
+function buildPost(userPost) {
+  clearApp();
 
+  userPost.forEach((post) => {
+    let postElement = `
+      <article>
+        <header>
+        <h4>${post.title}</h4>
+        <span>User: ${post.userId}</<p>
+        </header>
+        <div>
+          <p>${post.body}</p>
+          <footer>
+            ${post.tags.map((tag) => `<p>${tag}</p>`).join("")}
+          </footer>
+        </div>
+        <footer>
+          <span>
+            <button>Updoot</button>
+            <p>${post.reactions}</p>
+            <button>Downdoot</button>
+          </span>
+          <button>Comments</button>
+
+          <button>Report</button>
+        </footer>
+      </article>`;
+
+    viewContainer.innerHTML += postElement;
+  });
+}
+
+function clearApp() {
+  viewContainer.innerHTML = "";
+}
 //#endregion View Code
