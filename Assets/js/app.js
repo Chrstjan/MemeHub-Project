@@ -1,5 +1,15 @@
 //#region GLOBAL
+let allPostsArray = [];
+let allCommentsArray = [];
+let allUsersArray = [];
 
+function Init() {
+  getPostsData();
+  getCommentsData();
+  getUsersData();
+}
+
+Init();
 //#endregion GLOBAL
 
 //#region Model Code
@@ -12,7 +22,7 @@ function getPostsData() {
       return response.json();
     })
     .then((json) => {
-      //recivedPostsData(json);
+      recivedPostsData(json);
     })
     .catch((error) => {
       console.log("Error fetching posts data:", error);
@@ -28,7 +38,7 @@ function getUsersData() {
       return response.json();
     })
     .then((json) => {
-      //recivedUsersData(json);
+      recivedUsersData(json);
     })
     .catch((error) => {
       console.log("Error fetching users data:", error);
@@ -44,7 +54,7 @@ function getCommentsData() {
       return response.json();
     })
     .then((json) => {
-      //recivedCommentsData(json);
+      recivedCommentsData(json);
     })
     .catch((error) => {
       console.log("Error fetching comments data", error);
@@ -53,7 +63,23 @@ function getCommentsData() {
 //#endregion Model Code
 
 //#region Controller Code
+function recivedPostsData(userPost) {
+  allPostsArray = userPost;
 
+  console.log(allPostsArray);
+}
+
+function recivedCommentsData(userComments) {
+  allCommentsArray = userComments;
+
+  console.log(allCommentsArray);
+}
+
+function recivedUsersData(users) {
+  allUsersArray = users;
+
+  console.log(allCommentsArray);
+}
 //#endregion Controller Code
 
 //#region View Code
